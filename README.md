@@ -9,3 +9,4 @@
     - método `getAverageAttentionSpan`
 - El método `attendCustomer` devuelve un `Optional`. Esto permite evitar posibles null pointers. Ya que este objeto te obliga a preguntar si el valor está presente.
 - Uso de `final`: se utiliza para resaltar que es una constante, es decir, que no se le debe asignar otro valor. Si se intenta hacer el compilador falla.
+- Se tomó el tiempo de atención como el tiempo de espera ya que no se aclara nada de tiempos con respecto a la atención en ventanilla.

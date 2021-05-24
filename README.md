@@ -1,7 +1,7 @@
 # Metrovias TP
 
 - Existen dos constantes en la clase `Metrovías` que se podrían pasar cómo configuración. Se harcodearon ya que el enunciado no lo pedía.
-- Lo mismo pasa con el precio en la clase `TicketSeller`
+- Lo mismo pasa con el precio en la clase `TicketSeller`. Se usa un entero para simplificar. Pero siempre que se quiere representar plata hay que utilizar un tipo llamado `BigDecimal`.
 - Si se pidieran más estadísticas tendría sentido crear una clase propia que las maneje. Donde habría que pasar:
     - variable `revenue`
     - variable `totalAttentionSpan`

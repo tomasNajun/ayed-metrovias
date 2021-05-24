@@ -1,4 +1,4 @@
-package java.com.austral.ayed.metrovias;
+package main.java.com.austral.ayed.metrovias;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -25,7 +25,7 @@ public class Main {
             choice = showMenuAndGetChoice(scanner);
         }
         if (choice == 2)
-            exit(metrovias);
+            exit(metrovias, numberOfTicketSellers);
     }
 
     private static int getNumberOfCounters(final Scanner scanner) {
@@ -53,15 +53,18 @@ public class Main {
         metrovias.runSimulationStep(time);
     }
 
-    private static void exit(final Metrovias metrovias) {
+    private static void exit(final Metrovias metrovias, int numberOfTicketSellers) {
         final Stack<Customer> attendedCustomers = metrovias.getAttendedCustomers();
         printStack(attendedCustomers);
 
-        final String revenue = formatRevenue(metrovias.getRevenue());
-        System.out.println("Ingresos generados: " + revenue);
+        for (int i = 0; i < numberOfTicketSellers; i++) {
+            System.out.println("Estadísiticas para ventanilla nro: " + i);
+            final String revenue = formatRevenue(metrovias.getRevenueOf(i));
+            System.out.println("- Ingresos generados: " + revenue);
 
-        final String formattedAvg = formatTime(metrovias.getAverageAttentionSpan());
-        System.out.println("Tiempo medio de espera: " + formattedAvg + "s");
+            final String formattedAvg = formatTime(metrovias.getAverageAttentionSpanOf(i));
+            System.out.println("- Tiempo medio de espera: " + formattedAvg + "s");
+        }
     }
 
     private static String formatRevenue(final int amount) {

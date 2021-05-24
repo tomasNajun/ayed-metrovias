@@ -1,4 +1,4 @@
-package java.com.austral.ayed.metrovias;
+package main.java.com.austral.ayed.metrovias;
 
 public class TimeManager {
 

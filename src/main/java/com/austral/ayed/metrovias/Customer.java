@@ -1,17 +1,22 @@
-package java.com.austral.ayed.metrovias;
+package main.java.com.austral.ayed.metrovias;
+
+import java.util.Optional;
 
 public class Customer {
-    private final int ticketNumber;
     private final int arrivalTime;
+    private Ticket ticket;
     private int attentionSpan;
 
-    public Customer(int ticketNumber, int arrivalTime) {
-        this.ticketNumber = ticketNumber;
+    public Customer(int arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public int getTicketNumber() {
-        return ticketNumber;
+    public void assignTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public Optional<Ticket> getTicket() {
+        return Optional.ofNullable(ticket);
     }
 
     public int getAttentionSpan() {
